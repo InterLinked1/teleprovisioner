@@ -1,0 +1,5 @@
+config.inc.php
+favicon.ico
+*.jpg
+*.inc.php
+!*.sample.inc.php

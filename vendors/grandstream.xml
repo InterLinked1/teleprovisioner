@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gs_provision version="1">
+<config version="1">
+	<!-- Advanced -->
+	<P30>us.pool.ntp.org</P30>                   <!-- NTP Time Server ( FQDN or IP Address ) -->
+	<P76>stun.l.google.com:19302</P76>           <!-- STUN Server -->
+	<P145>0</P145>                               <!-- Allow DHCP Option 66 to override server. 0 - No, 1 - Yes.  -->
+	<P192>firmware.grandstream.com</P192>        <!-- Firmware Server Path (firmware.grandstream.com is right, fm.grandstream.com/gs is GAPS redirection) -->
+	<P193>60</P193>                              <!-- Automatic Upgrade Every XXX min -->
+	<P194>3</P194>                               <!-- Automatic Upgrade (0 = No, 3 = Every XXX min, 1 = Daily, 2 = Weekly -->
+	<P22296>1</P22296>                           <!-- Automatic Upgrade... newer HTs: 0 = No, 1 = Every XXX min, 2 = Daily, 3 = Weekly -->
+	<P207>10.40.1.196</P207>    			     <!-- SYSLOG Server -->
+	<P8402>0</P8402>                             <!-- Syslog Protocol (0 = UDP, 1 = SSL/TLS) -->
+	<P208>3</P208>                               <!-- SYSLOG Level (0 = NONE, 1 = DEBUG, 2= INFO, 3 = WARNING, 4 = ERROR, 5 = EXTRA DEBUG) -->
+	<P8534>1</P8534>                             <!-- CDR File Option (0 = Keep, 1 = Overwrite) -->
+	<P8535>1</P8535>                             <!-- SIP File Option (0 = Keep, 1 = Overwrite) -->
+	<P212>2</P212>                               <!-- Firmware Upgrade ( 0 = TFTP Upgrade, 1 = HTTP Upgrade, 2 = https, 3 = ftp, 4 = ftps) -->
+	<P232></P232>                                <!-- Firmware File Prefix (1.0.8.x) -->
+	<P234></P234>                                <!-- Config File Prefix (1.0.8.x) -->
+	<P8601>46</P8601>                            <!-- Provisioning Method (46 = XML, 47 = All) -->
+	<P238>0</P238>                               <!-- Check for new Firmware ( 0 = Every time, 1 = only when suffix/prefix changes, 2 = Never - 1.0.8.x) -->
+	<P277>1</P277>                               <!-- Disable Direct IP Call ( 0 = No, 1 = Yes) -->
+	<P240></P240>                                <!-- Authenticate Conf File -->
+	<P1359></P1359>                              <!-- XML Config File Password -->
+	<P20713>1</P20713>                           <!-- Always send HTTP Basic Authentication Information -->
+	<P1376>1</P1376>                             <!-- Disable Attended Transfer ( 0 = No, 1 = Yes) -->
+	<P4000>f1=350@-17,f2=440@-17,c=0/0;</P4000>  <!-- Dial Tone (default: f1=350@-17,f2=440@-17,c=0/0;) (doesn't work f1=1@-31,f2=1@-31,c=0/0;) -->
+	<!-- Profiles -->
+	<P31>1</P31>                                 <!-- SIP Registration ( 0 = do not register, 1 = register ) -->
+	<P731>1</P731>                               <!-- SIP Registration ( 0 = do not register, 1 = register ) -->
+	<P32>5</P32>                                 <!-- Register Timeout (5 minutes) -->
+	<P732>5</P732>                               <!-- Register Timeout (5 minutes) -->
+	<P2397>1</P2397>                             <!-- Enable SIP OPTIONS/NOTIFY Keep Alive (0 = No, 1 = OPTIONS, 2 = NOTIFY) -->
+	<P2497>1</P2497>                             <!-- Enable SIP OPTIONS/NOTIFY Keep Alive (0 = No, 1 = OPTIONS, 2 = NOTIFY) -->
+	<P2398>30</P2398>                            <!-- SIP OPTIONS/NOTIFY Keep Alive Interval (30 seconds) -->
+	<P2498>30</P2498>                            <!-- SIP OPTIONS/NOTIFY Keep Alive Interval (30 seconds) -->
+	<P81>1</P81>                                 <!-- Unregister on Reboot (0 = No, 1 = Yes) -->
+	<P752>1</P752>                               <!-- Unregister on Reboot (0 = No, 1 = Yes) -->
+	<P91>1</P91>                                 <!-- Disable Call Waiting (0 = No, 1 = Yes) -->
+	<P791>1</P791>                               <!-- Disable Call Waiting (0 = No, 1 = Yes) -->
+	<P109>1</P109>                               <!-- Outgoing call without Registration. 0 - No, 1 - Yes -->
+	<P813>1</P813>                               <!-- Outgoing call without Registration. 0 - No, 1 - Yes -->
+	<P185>300</P185>                             <!-- Ring Timeout (10-300 on older models, 0-300 on newer, 0 to disable) -->
+	<P816>300</P816>                             <!-- Ring Timeout (10-300 on older models, 0-300 on newer, 0 to disable) -->
+	<P892>1</P892>                               <!-- Loop Current Disconnect (Open Switching Interval) -->
+	<P893>1</P893>                               <!-- Loop Current Disconnect (Open Switching Interval) -->
+	<P228>1</P228>                               <!-- FAX Mode (0 = T38, 1 = Passthrough) -->
+	<P710>1</P710>                               <!-- FAX Mode (0 = T38, 1 = Passthrough) -->
+	<P191>0</P191>                               <!-- Enable Call Features (0 = No, 1 = Yes, 2 = Enable All) -->
+	<P751>0</P751>                               <!-- Enable Call Features (0 = No, 1 = Yes, 2 = Enable All) -->
+	<P198>100</P198>                             <!-- SPECIAL FEATURES 100 = standard -->
+	<P767>767</P767>                             <!-- SPECIAL FEATURES 100 = standard -->
+	<P258>1</P258>                               <!-- Check SIP User ID for Incoming Invite (0 = No, 1 = Yes, no direct IP calling) -->
+	<P449>1</P449>                               <!-- Check SIP User ID for Incoming Invite (0 = No, 1 = Yes, no direct IP calling) -->
+	<P4010>c=2000/4000;</P4010>                  <!-- Ring Tone 1 - Profile 1 -->
+	<P4030>c=2000/4000;</P4030>                  <!-- Ring Tone 1 - Profile 2 -->
+	<P4011>c=300/200-1000/200-300/4000;</P4011>  <!-- Ring Tone 2 -->
+	<P4031>c=300/200-1000/200-300/4000;</P4031>  <!-- Ring Tone 2 -->
+	<P4012>c=800/400-800/4000;</P4012>           <!-- Ring Tone 3 -->
+	<P4032>c=800/400-800/4000;</P4032>           <!-- Ring Tone 3 -->
+	<P4013>c=400/200-300/200-800/4000;</P4013>   <!-- Ring Tone 4 -->
+	<P4033>c=400/200-300/200-800/4000;</P4033>   <!-- Ring Tone 4 -->
+	<P4014>c=400/200-800/200-800/3600;</P4014>   <!-- Ring Tone 5 -->
+	<P4034>c=400/200-800/200-800/3600;</P4034>   <!-- Ring Tone 5 -->
+	<P4015>c=200/400-200/400-200/4000;</P4015>   <!-- Ring Tone 6 -->
+	<P4035>c=200/400-200/400-200/4000;</P4035>   <!-- Ring Tone 6 -->
+	<P4016>c=800/200-400/200-800/3600;</P4016>   <!-- Ring Tone 7 -->
+	<P4036>c=800/200-400/200-800/3600;</P4036>   <!-- Ring Tone 7 -->
+	<P4017>c=1650/350;</P4017>                   <!-- Ring Tone 8 -->
+	<P4037>c=1650/350;</P4037>                   <!-- Ring Tone 8 -->
+	<P4018>c=800/200-300/200-400/4000;</P4018>   <!-- Ring Tone 9 -->
+	<P4038>c=800/200-300/200-400/4000;</P4038>   <!-- Ring Tone 9 -->
+	<P4019>c=400/200-400/2000;</P4019>           <!-- Ring Tone 10 -->
+	<P4039>c=400/200-400/2000;</P4039>           <!-- Ring Tone 10 -->
+	<P4045>0</P4045>                             <!-- Off-hook Auto Dial Delay - Profile 1 -->
+	<P4046>0</P4046>                             <!-- Off-hook Auto Dial Delay - Profile 2 -->
+	<P4210>01</P4210>                            <!-- Off-hook Auto - Line 1 -->
+	<P4211>01</P4211>                            <!-- Off-hook Auto - Line 2 -->
+	<P4212>01</P4212>                            <!-- Off-hook Auto - Line 3 -->
+	<P4213>01</P4213>                            <!-- Off-hook Auto - Line 4 -->
+	<P4214>01</P4214>                            <!-- Off-hook Auto - Line 5 -->
+	<P4215>01</P4215>                            <!-- Off-hook Auto - Line 6 -->
+	<P4216>01</P4216>                            <!-- Off-hook Auto - Line 7 -->
+	<P4217>01</P4217>                            <!-- Off-hook Auto - Line 8 -->
+	<P4424>1</P4424>                             <!-- Enable Hook Flash - Profile 1 -->
+	<P4425>1</P4425>                             <!-- Enable Hook Flash - Profile 2 -->
+	<P20521>1</P20521>                           <!-- Enable Pulse Dialing (0 = No, 1 = Yes) - Profile 1 -->
+	<P20522>1</P20522>                           <!-- Enable Pulse Dialing (0 = No, 1 = Yes) - Profile 2 -->
+	<P28834>1</P28834>                           <!-- Fix polarity reversal for GXW-4224 -->
+	<P28835>1</P28835>                           <!-- Fix polarity reversal for GXW-4224 -->
+	<P28836>1</P28836>                           <!-- Fix polarity reversal for GXW-4224 -->
+	<P28837>1</P28837>                           <!-- Fix polarity reversal for GXW-4224 -->
+</config>
+</gs_provision>
