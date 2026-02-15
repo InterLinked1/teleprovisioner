@@ -27,17 +27,17 @@ function getCachedFile($cacheFile, $url, $noRecache = false) {
 function getWeatherAPIData($zip) {
 	global $openWeatherMapAPIKey;
 	$url = "http://api.openweathermap.org/data/2.5/forecast?zip=$zip&lang=en&units=imperial&APPID=$openWeatherMapAPIKey";
-	return getCachedFile("forecast_${zip}.json", $url);
+	return getCachedFile("forecast_{$zip}.json", $url);
 }
 function getAirPollutionByCoords($lat, $long) {
 	global $openWeatherMapAPIKey;
 	$url = "http://api.openweathermap.org/data/2.5/air_pollution?lat=$lat&lon=$long&appid=$openWeatherMapAPIKey";
-	return getCachedFile("aqi_${lat}_${long}.json", $url);
+	return getCachedFile("aqi_{$lat}_{$long}.json", $url);
 }
 function getCoordinatesFromZIP($zip) {
 	global $openWeatherMapAPIKey;
 	$url = "http://api.openweathermap.org/geo/1.0/zip?zip=$zip,US&appid=$openWeatherMapAPIKey";
-	return getCachedFile("coords_${zip}.json", $url, true); /* Response will never change so once cached, always reuse */
+	return getCachedFile("coords_{$zip}.json", $url, true); /* Response will never change so once cached, always reuse */
 }
 function getAirPollutionByZIP($zip) {
 	$coords = getCoordinatesFromZIP($zip);
@@ -287,11 +287,11 @@ function polycomWeather($zip, $tz) {
 		$precip2 = $glyphArray['Sunny'][0];
 	}
 	echo "<title>$weather</title></head><body><hr/>" . PHP_EOL;
-	echo "Temp: ${tempF}${degrees}F $sunriseSym $sunriseF $sunsetSym $sunsetF" . PHP_EOL;
-	echo "<br/>Feels ${tempFeelsF}${degrees}, Wind: $wind mph $windDirName, $precipNow" . PHP_EOL;
+	echo "Temp: {$tempF}{$degrees}F $sunriseSym $sunriseF $sunsetSym $sunsetF" . PHP_EOL;
+	echo "<br/>Feels {$tempFeelsF}{$degrees}, Wind: $wind mph $windDirName, $precipNow" . PHP_EOL;
 	echo "<br/>RH $humidity%, BP $pressure\", AQI $aqi [$pm25 PM]" . PHP_EOL; /* PM 2.5 */
-	echo "<br/>Today: ${highArr}${maxTemp}${degrees} ${lowArr}${minTemp}${degrees}, ${weatherSym} $precip" . PHP_EOL;
-	echo "<br/>$tomorrow: ${highArr}${maxTemp2}${degrees} ${lowArr}${minTemp2}${degrees}, ${weatherSym2} $precip2";
+	echo "<br/>Today: {$highArr}{$maxTemp}{$degrees} {$lowArr}{$minTemp}{$degrees}, {$weatherSym} $precip" . PHP_EOL;
+	echo "<br/>$tomorrow: {$highArr}{$maxTemp2}{$degrees} {$lowArr}{$minTemp2}{$degrees}, {$weatherSym2} $precip2";
 }
 function wind_degrees_to_direction($degrees) {
 	$degrees -= (22.5 / 2); /* want to center, not start, at each threshold */

@@ -495,7 +495,7 @@ class Provision extends ProvisionClass {
 			 * a binary for the ATA, e.g.:
 			 *
 			 * ./encode.sh 000b82000000 config cfg000b82000000
-			 * openssl enc -e -aes-256-cbc -md md5 -k XXXXXXXXXXXXXXXXXXXX -in ${tmpfile} -out ${encrypted_tmpfile}
+			 * openssl enc -e -aes-256-cbc -md md5 -k XXXXXXXXXXXXXXXXXXXX -in {$tmpfile} -out {$encrypted_tmpfile}
 			 */
 			header("Content-Type: text/plain");
 			foreach($array['gs_provision']['config'] as $k => $v) {
