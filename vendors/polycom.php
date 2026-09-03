@@ -312,6 +312,7 @@ class Provision extends ProvisionClass {
 		/* Categorize the device */
 		$oldPolycom = (strstr($this->agent, "PolycomSoundPointIP") !== false);
 		$bigSoundPoint = (strstr($this->agent, "PolycomSoundPointIP-SPIP_550") !== false || strstr($this->agent, "PolycomSoundPointIP-SPIP_650") !== false);
+		$supportsSidecars = strstr($this->agent, "PolycomSoundPointIP-SPIP_650") !== false;
 		$isVVX = strstr($this->agent, "VVX") !== false;
 		if (strstr($this->agent, "UA/4.0.6.")) {
 			provLog($this->mac . ": Please upgrade firmware to 4.0.15.1047 for TLS 1.2 support");
@@ -548,6 +549,10 @@ class Provision extends ProvisionClass {
 			$this->polycomSet($array, "reg.$jack.type", $line['shared'] ? "shared" : "private"); /* private or shared (BLA)? - use thirdPartyName with BLA. */
 		}
 
+		if (file_exists('vendors/polycom-custom.php')) {
+			include_once('vendors/polycom-custom.php');
+		}
+
 		/* Generate config */
 		$xml = $this->polycomPrint($array);
 		if (strlen($this->polycomLogfile) > 0) {
@@ -555,5 +560,11 @@ class Provision extends ProvisionClass {
 		}
 		header("Content-type: application/xml");
 		echo $xml;
+	}
+
+	private function setBLF(&$array, $index, $address, $label, $type) {
+		$this->polycomSet($array, "attendant.resourceList.$index.address", $address);
+		$this->polycomSet($array, "attendant.resourceList.$index.label", $label);
+		$this->polycomSet($array, "attendant.resourceList.$index.type", $type);
 	}
 }

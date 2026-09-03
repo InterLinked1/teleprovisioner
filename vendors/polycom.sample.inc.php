@@ -22,6 +22,6 @@ $this->polyCertDir = "/home/polycerts";
 
 /* Some Polycoms do not have a factory cert signed by the Polycom CAs, they just have a self-signed one :(
  * In that case, you will get a Polycom MTLS hardfail error during provisioning.
- * Include such ATAs here to allow provisioning without a unique cert. */
+ * Include such IP phones here to allow provisioning without a unique cert. */
 $this->exemptedPolycoms = array();
 ?>
